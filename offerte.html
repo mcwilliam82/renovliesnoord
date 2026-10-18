@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offerte aanvragen | Renovlies Noord</title>
+  <meta name="description" content="Vraag een offerte aan voor volledige wandafwerking in Leeuwarden en omgeving met Ekotex Sprint en Ekotex muurverf.">
+  <link rel="canonical" href="https://renovliesnoord.nl/offerte.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.jpg" alt="Logo Renovlies Noord">
+        <span>Renovlies Noord</span>
+      </a>
+      <button class="menu-btn" aria-label="Menu">☰</button>
+      <nav>
+        <a href="index.html#aanpak">Aanpak</a>
+        <a href="index.html#materialen">Materialen</a>
+        <a href="index.html#werkgebied">Werkgebied</a>
+        <a class="btn" href="offerte.html">Offerte</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="wrap grid-2">
+      <div>
+        <p class="eyebrow">Vrijblijvend</p>
+        <h1>Offerte aanvragen</h1>
+        <p class="lead">Vertel kort over de woning. We reageren snel en plannen desgewenst een opname in Leeuwarden en omgeving.</p>
+        <div class="card" style="margin-top:24px">
+          <h3>Wat we nodig hebben</h3>
+          <ul class="list">
+            <li>Plaats en type woning</li>
+            <li>Geschat aantal m² wand (of plattegrond)</li>
+            <li>Opleverdatum of gewenste startdatum</li>
+            <li>Foto’s van de wanden helpen enorm</li>
+          </ul>
+        </div>
+      </div>
+      <form class="card" id="offerteform" action="https://formspree.io/f/your-form-id" method="POST">
+        <div class="form-row">
+          <div><label for="naam">Naam</label><input id="naam" name="naam" required></div>
+          <div><label for="plaats">Plaats</label><input id="plaats" name="plaats" required></div>
+        </div>
+        <div class="form-row">
+          <div><label for="email">E-mail</label><input id="email" name="email" type="email" required></div>
+          <div><label for="telefoon">Telefoon</label><input id="telefoon" name="telefoon" type="tel" required></div>
+        </div>
+        <div>
+          <label for="dienst">Gewenste dienst</label>
+          <select id="dienst" name="dienst">
+            <option>Volledige wandafwerking (repareren, schuren, Sprint, kitten, sausen)</option>
+            <option>Renovlies Sprint + sausen</option>
+            <option>Alleen sauswerk</option>
+            <option>Nieuwbouw / meerdere woningen</option>
+            <option>Nog niet zeker, graag advies</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div><label for="m2">Geschatte m² wanden</label><input id="m2" name="m2" placeholder="bijv. 180"></div>
+          <div><label for="datum">Gewenste start</label><input id="datum" name="datum" type="month"></div>
+        </div>
+        <div>
+          <label for="bericht">Toelichting</label>
+          <textarea id="bericht" name="bericht" placeholder="Type woning, opleverstatus, kleurwens, bijzonderheden..."></textarea>
+        </div>
+        <button class="btn btn-dark" type="submit">Verstuur aanvraag</button>
+        <p class="note">Door te versturen gaat u akkoord met contact over deze aanvraag. Geen spam.</p>
+        <div class="success" id="success">Bedankt. We nemen zo snel mogelijk contact op.</div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div><strong>Renovlies Noord</strong><p>renovliesnoord.nl</p></div>
+      <div><a href="index.html">Home</a><br><a href="contact.html">Contact</a></div>
+      <div>info@renovliesnoord.nl<br>06 - 00 00 00 00</div>
+    </div>
+    <div class="wrap legal">© 2026 Renovlies Noord</div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
