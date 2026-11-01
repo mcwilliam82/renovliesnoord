@@ -7,14 +7,29 @@ if (btn && nav) {
 const form = document.getElementById("offerteform");
 if (form) {
   form.addEventListener("submit", async (e) => {
-    const action = form.getAttribute("action") || "";
-    if (action.includes("your-form-id")) {
-      e.preventDefault();
-      const success = document.getElementById("success");
+    e.preventDefault();
+    const success = document.getElementById("success");
+    const button = form.querySelector("button[type=submit]");
+    if (button) button.disabled = true;
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString(),
+      });
+      if (!res.ok) throw new Error(res.status);
+      form.reset();
       if (success) {
         success.style.display = "block";
-        success.textContent = "Formulier is nog niet gekoppeld. Vervang Formspree-ID of koppel uw e-mail. Gegevens zijn lokaal nagebootst.";
+        success.textContent = "Bedankt. We nemen zo snel mogelijk contact op.";
       }
+    } catch (err) {
+      if (success) {
+        success.style.display = "block";
+        success.textContent = "Versturen lukte niet. Bel of WhatsApp ons op 06 - 25 21 31 91.";
+      }
+    } finally {
+      if (button) button.disabled = false;
     }
   });
 }

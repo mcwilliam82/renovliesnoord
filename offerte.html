@@ -44,7 +44,9 @@
           </ul>
         </div>
       </div>
-      <form class="card" id="offerteform" action="https://formspree.io/f/your-form-id" method="POST">
+      <form class="card" id="offerteform" name="offerte" method="POST" action="/bedankt.html" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="offerte">
+        <p hidden><label>Niet invullen: <input name="bot-field"></label></p>
         <div class="form-row">
           <div><label for="naam">Naam</label><input id="naam" name="naam" required></div>
           <div><label for="plaats">Plaats</label><input id="plaats" name="plaats" required></div>
