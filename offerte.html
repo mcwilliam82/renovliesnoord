@@ -29,7 +29,7 @@
   </header>
 
   <section class="page-hero">
-    <div class="wrap grid-2">
+    <div class="wrap grid-2 offerte-grid">
       <div>
         <p class="eyebrow">Vrijblijvend</p>
         <h1>Offerte aanvragen</h1>
@@ -44,38 +44,29 @@
           </ul>
         </div>
       </div>
-      <form class="card" id="offerteform" name="offerte" method="POST" action="/bedankt.html" data-netlify="true" netlify-honeypot="bot-field">
+      <form class="card form-card" id="offerteform" name="offerte" method="POST" action="/bedankt.html" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="offerte">
         <p hidden><label>Niet invullen: <input name="bot-field"></label></p>
-        <div class="form-row">
-          <div><label for="naam">Naam</label><input id="naam" name="naam" required></div>
-          <div><label for="plaats">Plaats</label><input id="plaats" name="plaats" required></div>
+        <div class="form-grid">
+          <div class="field"><label for="naam">Naam</label><input id="naam" name="naam" autocomplete="name" required></div>
+          <div class="field"><label for="plaats">Plaats</label><input id="plaats" name="plaats" autocomplete="address-level2" required></div>
+          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="telefoon">Telefoon</label><input id="telefoon" name="telefoon" type="tel" autocomplete="tel" required></div>
+          <div class="field full"><label for="dienst">Gewenste werkzaamheden</label><input id="dienst" name="dienst" placeholder="bijv. hele benedenverdieping renovlies + sausen"></div>
+          <div class="field"><label for="m2">Geschatte m² wanden</label><input id="m2" name="m2" inputmode="numeric" placeholder="bijv. 180"></div>
+          <div class="field"><label for="datum">Gewenste start</label><input id="datum" name="datum" type="month"></div>
+          <div class="field full">
+            <label>Foto’s of bouwtekening <span class="optional">(optioneel, samen max. 8 MB)</span></label>
+            <div class="upload-list">
+              <input id="bestand1" name="bestand1" type="file" accept="image/*,.pdf">
+              <input id="bestand2" name="bestand2" type="file" accept="image/*,.pdf">
+              <input id="bestand3" name="bestand3" type="file" accept="image/*,.pdf">
+            </div>
+          </div>
         </div>
-        <div class="form-row">
-          <div><label for="email">E-mail</label><input id="email" name="email" type="email" required></div>
-          <div><label for="telefoon">Telefoon</label><input id="telefoon" name="telefoon" type="tel" required></div>
-        </div>
-        <div>
-          <label for="dienst">Gewenste dienst</label>
-          <select id="dienst" name="dienst">
-            <option>Volledige wandafwerking (repareren, schuren, Sprint, kitten, sausen)</option>
-            <option>Renovlies Sprint + sausen</option>
-            <option>Alleen sauswerk</option>
-            <option>Nieuwbouw / meerdere woningen</option>
-            <option>Nog niet zeker, graag advies</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <div><label for="m2">Geschatte m² wanden</label><input id="m2" name="m2" placeholder="bijv. 180"></div>
-          <div><label for="datum">Gewenste start</label><input id="datum" name="datum" type="month"></div>
-        </div>
-        <div>
-          <label for="bericht">Toelichting</label>
-          <textarea id="bericht" name="bericht" placeholder="Type woning, opleverstatus, kleurwens, bijzonderheden..."></textarea>
-        </div>
-        <button class="btn btn-dark" type="submit">Verstuur aanvraag</button>
+        <button class="btn btn-dark btn-block" type="submit">Verstuur aanvraag</button>
         <p class="note">Door te versturen gaat u akkoord met contact over deze aanvraag. Geen spam.</p>
-        <div class="success" id="success">Bedankt. We nemen zo snel mogelijk contact op.</div>
+        <div class="success" id="success" role="status"></div>
       </form>
     </div>
   </section>

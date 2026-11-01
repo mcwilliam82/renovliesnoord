@@ -115,3 +115,37 @@ footer a:hover { color: var(--sand); }
   .grid-2, .steps, .footer-grid, .cta-band { grid-template-columns: 1fr; display: grid; }
   .hero { min-height: 70vh; }
 }
+
+/* Offerteformulier */
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+.offerte-grid { align-items: start; }
+.form-card { padding: 32px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-weight: 600; font-size: .92rem; color: var(--navy); }
+.optional { font-weight: 400; color: var(--muted); }
+.field input {
+  width: 100%; box-sizing: border-box; height: 46px; padding: 0 14px;
+  font: inherit; color: var(--ink); background: #fff;
+  border: 1px solid rgba(22,50,63,.22); border-radius: 10px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.field input::placeholder { color: #9aa3a7; }
+.field input:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(196,165,116,.35); }
+.upload-list { display: grid; gap: 8px; }
+.field input[type=file] { height: auto; padding: 10px 12px; background: var(--cream); border-style: dashed; cursor: pointer; font-size: .92rem; }
+.field input[type=file]::file-selector-button {
+  margin-right: 12px; padding: 7px 14px; border: 0; border-radius: 8px;
+  background: var(--navy); color: #fff; font: inherit; font-weight: 600; cursor: pointer;
+}
+.btn-dark { background: var(--navy); color: #fff; border: 0; cursor: pointer; font: inherit; font-weight: 700; }
+.btn-dark:hover { background: var(--navy-deep); color: #fff; }
+.btn-dark:disabled { opacity: .6; cursor: wait; }
+.btn-block { width: 100%; justify-content: center; margin-top: 24px; height: 50px; font-size: 1rem; }
+.note { margin-top: 10px; font-size: .85rem; color: var(--muted); text-align: center; }
+.success { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: #eef5ef; color: #1f5130; font-weight: 600; }
+@media (max-width: 800px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-card { padding: 22px; }
+}
